@@ -14,12 +14,14 @@ from typing import Iterable
 
 
 class ListNode:
+
     def __init__(self, e, next=None) -> None:
         self.element = e
         self.next = next
 
 
 class LinkedList:
+
     def __init__(self) -> None:
         self.head = None
         self.count = 0
@@ -45,22 +47,25 @@ class LinkedList:
 
     def insert(self, i, e) -> None:
         '''在linkedList的第i个位置,插入元素e.'''
-        assert i >= 0 and i <= self.count, "i的取值范围为[0,len],且i为整数."
+        assert i >= 0 and i <= self.count, f"i的取值范围为[0,{len(self)}],且i为整数."
         if i == 0:
             self.add_first(e)
         else:
             cur = self.head
-            while i > 0:
+            node = ListNode(e, next=None)
+            while i - 1 > 0 and cur.next:
                 cur = cur.next
                 i -= 1
-            node = ListNode(e, next=None)
-            node.next = cur.next
-            cur.next = node
-        self.count += 1
+            if i - 1 > 0:
+                cur.next.next = node
+            else:
+                node.next = cur.next
+                cur.next = node
+            self.count += 1
 
     def delete(self, i) -> ListNode:
         '''删除linkedList的第i个位置的元素,并返回该节点的值.'''
-        assert i >= 0 and i < self.count, "i的取值范围为[0,len),且i为整数."
+        assert i >= 0 and i < self.count, f"i的取值范围为[0,{len(self)}),且i为整数."
         cur = self.head
         if i == 0:
             self.head = cur.next
@@ -72,11 +77,12 @@ class LinkedList:
             out = cur.next
             cur.next = out.next
 
+        self.count -= 1
         return out.element
 
     def get(self, i) -> ListNode:
         '''返回linkedList的第i个位置的节点的值'''
-        assert i >= 0 and i < self.count, "i的取值范围为[0,len),且i为整数."
+        assert i >= 0 and i < self.count, "i的取值范围为[0,{len(self)}),且i为整数."
         cur = self.head
 
         while i > 0:
@@ -86,7 +92,7 @@ class LinkedList:
         return cur.element
 
     def set(self, i, e) -> None:
-        assert i >= 0 and i < self.count, "i的取值范围为[0,len),且i为整数."
+        assert i >= 0 and i < self.count, "i的取值范围为[0,{len(self)}),且i为整数."
         cur = self.head
 
         while i > 0:
@@ -99,7 +105,7 @@ class LinkedList:
         cur = self.head
         datas = []
         while cur:
-            datas.append(cur.element)
+            datas.append(str(cur.element))
             cur = cur.next
         out = '[' + '->'.join(datas) + ']'
         return out
@@ -108,7 +114,10 @@ class LinkedList:
         cur = self.head
         datas = []
         while cur:
-            datas.append(cur.element)
+            datas.append(str(cur.element))
             cur = cur.next
         out = '[' + ','.join(datas) + ']'
         return out
+
+    def __len__(self):
+        return self.count
