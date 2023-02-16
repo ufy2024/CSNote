@@ -141,3 +141,7 @@ class DoubleLinkedList:
     def __init__(self) -> None:
         self.head = None
         self.count = 0
+
+    def create(self, datas: Iterable):
+        for e in datas:
+            node = ListNode2Link(element=e)
