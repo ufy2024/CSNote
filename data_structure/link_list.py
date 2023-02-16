@@ -7,12 +7,14 @@
 @Version :   v1.0
 @Desc    :   None
 '''
-
 # here put the import lib
 
 from typing import Iterable
 
 
+#-----------------------------------------------------------------------------------------
+# single linked list
+#-----------------------------------------------------------------------------------------
 class ListNode:
 
     def __init__(self, e, next=None) -> None:
@@ -121,3 +123,21 @@ class LinkedList:
 
     def __len__(self):
         return self.count
+
+
+#-----------------------------------------------------------------------------------------
+# doublle linked list
+#-----------------------------------------------------------------------------------------
+class ListNode2Link:
+
+    def __init__(self, element=None, prior=None, next=None) -> None:
+        self.element = element
+        self.prior = prior
+        self.next = next
+
+
+class DoubleLinkedList:
+
+    def __init__(self) -> None:
+        self.head = None
+        self.count = 0
