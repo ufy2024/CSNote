@@ -7,8 +7,10 @@
 @Version :   v1.0
 @Desc    :   None
 '''
-# here put the import lib
 from link_list import LinkedList
+
+# here put the import lib
+from data_structure.exceptions import Empty
 
 
 class Stack:
@@ -20,10 +22,16 @@ class Stack:
         self.data.append(e)
 
     def pop(self):
-        self.data.pop()
+        if len(self.data):
+            return self.data.pop()
+        else:
+            raise Empty("栈空")
 
     def top(self):
-        return self.data[-1]
+        if len(self.data):
+            return self.data[-1]
+        else:
+            raise Empty("栈空")
 
     def __len__(self):
         return len(self.data)
@@ -40,14 +48,20 @@ class LinkStack:
     def __init__(self) -> None:
         self.data = LinkedList()
 
-    def pop(self, ):
-        return self.data.delete(i=self.data.count - 1)
-
     def push(self, e):
         self.data.insert(i=self.data.count, e=e)
 
+    def pop(self, ):
+        if len(self.data):
+            return self.data.delete(i=self.data.count - 1)
+        else:
+            raise Empty("栈空")
+
     def top(self):
-        return self.data.get(i=self.data.count - 1)
+        if len(self.data):
+            return self.data.get(i=self.data.count - 1)
+        else:
+            raise Empty("栈空")
 
     def __len__(self):
         return len(self.data)
