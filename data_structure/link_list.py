@@ -11,8 +11,6 @@
 
 from typing import Iterable
 
-from requests import delete
-
 
 #-----------------------------------------------------------------------------------------
 # single linked list
