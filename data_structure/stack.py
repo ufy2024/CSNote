@@ -8,7 +8,7 @@
 @Desc    :   None
 '''
 # here put the import lib
-from data_structure.link_list import LinkedList
+from link_list import LinkedList
 
 
 class Stack:
@@ -22,11 +22,14 @@ class Stack:
     def pop(self):
         self.data.pop()
 
+    def top(self):
+        return self.data[-1]
+
     def __len__(self):
         return len(self.data)
 
     def __str__(self):
-        return "[" + ",".join(self.data) + ">"
+        return "[" + ",".join(map(lambda x: str(x), self.data)) + ">"
 
     def __repr__(self) -> str:
         return str(self.data)
@@ -38,16 +41,24 @@ class LinkStack:
         self.data = LinkedList()
 
     def pop(self, ):
-        return self.data.delete(i=self.data.count)
+        return self.data.delete(i=self.data.count - 1)
 
     def push(self, e):
         self.data.insert(i=self.data.count, e=e)
+
+    def top(self):
+        return self.data.get(i=self.data.count - 1)
 
     def __len__(self):
         return len(self.data)
 
     def __str__(self):
-        return "[" + ",".join(self.data) + ">"
+        data = []
+        cur = self.data.head
+        while cur:
+            data.append(str(cur.element))
+            cur = cur.next
+        return "[" + ",".join(data) + ">"
 
     def __repr__(self) -> str:
         return str(self.data)
