@@ -7,8 +7,9 @@
 @Version :   v1.0
 @Desc    :   None
 '''
-from exceptions import Empty
 # here put the import lib
+
+from exceptions import Empty
 from link_list import LinkedList
 
 
