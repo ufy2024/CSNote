@@ -154,6 +154,7 @@ class DoubleLinkedList(LinkedList):
             else:
                 cur.next = node
                 node.prior = cur
+                cur = node
             self.count += 1
 
     def add_first(self, e):
@@ -196,7 +197,8 @@ class DoubleLinkedList(LinkedList):
                 i -= 1
             out = cur.next
             cur.next = cur.next.next
-            cur.next.prior = cur
+            if cur.next:
+                cur.next.prior = cur
         self.count -= 1
         return out.element
 
