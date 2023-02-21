@@ -209,3 +209,9 @@ class DoubleLinkedList(LinkedList):
             cur = cur.next
         out = '[' + ' <-> '.join(datas) + ']'
         return out
+
+    def __repr__(self) -> str:
+        return str(self)
+
+    def __len__(self):
+        return self.count
