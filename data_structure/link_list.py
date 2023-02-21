@@ -84,7 +84,7 @@ class LinkedList:
         self.count -= 1
         return out.element
 
-    def get(self, i) -> ListNode:
+    def get(self, i):
         '''返回linkedList的第i个位置的节点的值'''
         assert i >= 0 and i < self.count, "i的取值范围为[0,{len(self)}),且i为整数."
         cur = self.head
@@ -92,7 +92,6 @@ class LinkedList:
         while i > 0:
             cur = cur.next
             i -= 1
-
         return cur.element
 
     def set(self, i, e) -> None:
