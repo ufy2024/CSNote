@@ -9,6 +9,7 @@
 '''
 
 # here put the import lib
-from link_list import DoubleLinkedList, LinkedList
-from stack import LinkStack, Stack
+
+from ufy_link_list import DoubleLinkedList, LinkedList
 from ufy_queue import LinkQueue, Queue
+from ufy_stack import LinkStack, Stack

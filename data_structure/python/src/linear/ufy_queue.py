@@ -9,9 +9,8 @@
 '''
 # here put the import lib
 
-from link_list import LinkedList
-
-from data_structure.python.src.utils.ufy_exception import Empty
+from ufy_link_list import LinkedList
+from utils.ufy_exception import Empty
 
 
 class Queue:
