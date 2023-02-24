@@ -7,10 +7,11 @@
 @Version :   v1.0
 @Desc    :   None
 '''
-from link_list import LinkedList
 
 # here put the import lib
-from data_structure.exceptions import Empty
+
+from link_list import LinkedList
+from myException import Empty
 
 
 class Stack:
