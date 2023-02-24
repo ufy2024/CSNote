@@ -10,6 +10,6 @@
 
 # here put the import lib
 
-from ufy_link_list import DoubleLinkedList, LinkedList
-from ufy_queue import LinkQueue, Queue
-from ufy_stack import LinkStack, Stack
+from src.linear.ufy_link_list import DoubleLinkedList, LinkedList
+from src.linear.ufy_queue import LinkQueue, Queue
+from src.linear.ufy_stack import LinkStack, Stack

@@ -10,9 +10,8 @@
 
 # here put the import lib
 
-from data_structure.python.src.linear.ufy_link_list import LinkedList
-
-from data_structure.python.src.utils.ufy_exception import Empty
+from src.linear.ufy_link_list import LinkedList
+from src.utils.ufy_exception import Empty
 
 
 class Stack:

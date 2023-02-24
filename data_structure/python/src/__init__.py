@@ -8,5 +8,6 @@
 @Desc    :   None
 '''
 # here put the import lib
-from linear import *
-from utils import *
+
+from src.linear import (DoubleLinkedList, LinkedList, LinkQueue, LinkStack,
+                        Queue, Stack)
