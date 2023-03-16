@@ -9,8 +9,8 @@
 '''
 # here put the import lib
 
-from src.linear.ufy_link_list import LinkedList
-from src.utils.ufy_exception import Empty
+from ufy.linear.linklist import LinkedList
+from ufy.utils.exceptions import Empty
 
 
 class Queue:
