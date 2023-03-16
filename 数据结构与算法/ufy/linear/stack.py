@@ -7,7 +7,6 @@
 @Version :   v1.0
 @Desc    :   None
 '''
-rebuild
 # here put the import lib
 
 from ufy.linear.linklist import LinkedList
